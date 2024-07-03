@@ -92,6 +92,9 @@ namespace OpenHardwareMonitor.Hardware.CPU {
       : base(processorIndex, cpuid, settings) {
       // set tjMax
       float[] tjMax;
+      //Console.WriteLine("family:" + family);
+      //MessageBox.Show("family: " + family);
+      //MessageBox.Show("model: " + model);
       switch (family) {
         case 0x06: {
             switch (model) {
@@ -221,6 +224,21 @@ namespace OpenHardwareMonitor.Hardware.CPU {
                 break;
               case 0x8C: // Intel processors (10nm++)
               case 0x8D:
+              case 0x97: //Alder Lake /*Golden Cove
+              case 0x9A: //Alder Lake /*Golden Cove
+
+              case 0xB7: //Raptor Cove /*Enhanced Gracemont
+              case 0xBA: //Raptor Cove /*Enhanced Gracemont
+              case 0xBF: //Raptor Cove /*Enhanced Gracemont
+
+              case 0xAC: //MeteorLake
+              case 0xAA: //MeteorLake
+
+              case 0xC5: //ArrowLake
+              case 0xC6: //ArrowLake
+              case 0xB5: //ArrowLake U
+
+              case 0xBD: //LunarLake U
                 microarchitecture = Microarchitecture.TigerLake;
                 tjMax = GetTjMaxFromMSR();
                 break;
