@@ -219,6 +219,7 @@ namespace OpenHardwareMonitor.Hardware.CPU {
                 tjMax = GetTjMaxFromMSR();
                 break;
               case 0x86: // Intel Atom processors
+              case 0x96: // Intel Atom processors /* Elkhart Lake */
                 microarchitecture = Microarchitecture.Tremont;
                 tjMax = GetTjMaxFromMSR();
                 break;
